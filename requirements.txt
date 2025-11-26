@@ -1,0 +1,8 @@
+# Para instalar todas las dependencias del proyecto, ejecutar:
+# pip install -r requirements.txt
+
+selenium
+pytest
+pytest-html
+webdriver-manager
+requests
