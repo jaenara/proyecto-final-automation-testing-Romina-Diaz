@@ -13,7 +13,22 @@ class CheckoutOverviewPage:
         return self.driver.find_element(*self.title).text
 
     def click_finish(self):
-        # Espera a que el botón sea clickeable
-        WebDriverWait(self.driver, 10).until(
+        # Esperar a que el botón FINISH esté presente
+        WebDriverWait(self.driver, 15).until(
+            EC.presence_of_element_located(self.finish_button)
+        )
+
+        # Esperar a que sea clickeable
+        finish_btn = WebDriverWait(self.driver, 15).until(
             EC.element_to_be_clickable(self.finish_button)
-        ).click()
+        )
+        finish_btn.click()
+
+        # Esperar a que el título de la página final sea visible
+        WebDriverWait(self.driver, 15).until(
+            EC.text_to_be_present_in_element(
+                (By.CLASS_NAME, "title"),
+                "Checkout: Complete!"
+            )
+        )
+
