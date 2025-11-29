@@ -153,20 +153,6 @@ Cuando el sitio no responde correctamente:
 →El reporte HTML lo documenta
 →Este caso sirve como ejemplo real de cómo manejar errores intermitentes en entornos externos.
 
-# Requisitos cumplidos según la consigna
-✔ Page Object Model
-✔ 5+ pruebas UI funcionales
-✔ Pruebas API (GET, POST, DELETE)
-✔ Prueba API encadenada
-✔ Reporte HTML completo
-✔ Capturas automáticas
-✔ Estructura modular
-✔ Código claro y documentado
-✔ Configuración por conftest.py
-✔ requirements.txt
-✔ pytest.ini configurado
-✔ Proyecto reproducible con un solo comando
-
 # Autora
 Romina Elizabeth Díaz
 Proyecto Final – Automatización de Testing

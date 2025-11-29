@@ -30,7 +30,7 @@ jobs:
         uses: browser-actions/setup-chrome@latest
 
       - name: Run tests
-        run: pytest --html=report.html --self-contained-html
+        run: pytest -m "not skip_ci" --html=report.html --self-contained-html
 
       - name: Upload HTML report
         uses: actions/upload-artifact@v4

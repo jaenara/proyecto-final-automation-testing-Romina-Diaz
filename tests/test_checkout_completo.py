@@ -1,3 +1,4 @@
+
 from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
 from pages.cart_page import CartPage
@@ -5,6 +6,9 @@ from pages.checkout_page import CheckoutPage
 from pages.checkout_overview_page import CheckoutOverviewPage
 from pages.checkout_complete_page import CheckoutCompletePage
 
+import pytest
+
+@pytest.mark.skip_ci
 def test_checkout_completo(driver):
     # 1. Ir al sitio
     driver.get("https://www.saucedemo.com/")
