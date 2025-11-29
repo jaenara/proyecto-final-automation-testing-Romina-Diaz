@@ -152,8 +152,41 @@ Cuando el sitio no responde correctamente:
 →Se toma una captura automática
 →El reporte HTML lo documenta
 →Este caso sirve como ejemplo real de cómo manejar errores intermitentes en entornos externos.
+________________
+# Integración con CI/CD (GitHub Actions)
+Esta rama incluye una configuración opcional de CI/CD para demostrar cómo el proyecto puede ejecutarse de forma automática cada vez que se realiza un push.
+
+# El workflow:
+→ Instala dependencias.
+→ Ejecuta las pruebas con Pytest.
+→ Genera un reporte HTML.
+→ Publica los resultados como artefactos descargables.
+
+# Manejo de pruebas con Selenium
+Las ejecuciones CI/CD se realizan en entornos headless.
+En este tipo de entornos:
+- Algunas animaciones o tiempos de carga cambian.
+- Determinados elementos de la UI pueden no estar disponibles al mismo tiempo que en modo “normal”.
+
+Por esto, dos tests de UI fueron marcados con:
+
+```python
+@pytest.mark.skip_ci
+```
+
+# Razon de la exclusion de dos tests:
+Se excluyen únicamente en el workflow porque:
+- Dependen de interacciones visuales sensibles al entorno.
+- Funcionan perfectamente en modo local.
+- Evitamos falsos fallos que no reflejan la calidad del proyecto.
+- Se prioriza mantener un pipeline estable y confiable.
+
+# Razon por la que el CI/CD está en una rama aparte:
+- La rama principal queda limpia, estable y lista para producir.
+- La implementación de CI/CD se ofrece como agregado opcional para evaluación.
+- Permite mostrar conocimiento de pipelines sin arriesgar la estabilidad del proyecto final.
 
 # Autora
-Romina Elizabeth Díaz
-Proyecto Final – Automatización de Testing
+Romina Elizabeth Díaz -
+Proyecto Final – Automatización de Testing -
 Año 2025
