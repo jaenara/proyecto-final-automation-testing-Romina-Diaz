@@ -1,6 +1,8 @@
 from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
+import pytest
 
+@pytest.mark.skip_ci
 def test_agregar_producto_al_carrito(driver):
     # 1. Abrir la página principal
     driver.get("https://www.saucedemo.com/")
